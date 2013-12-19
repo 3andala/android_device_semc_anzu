@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from anzu device
 $(call inherit-product, device/semc/anzu/anzu.mk)
@@ -28,3 +28,7 @@ PRODUCT_DEVICE := anzu
 PRODUCT_BRAND := SEMC
 PRODUCT_MANUFACTURER := SEMC
 PRODUCT_MODEL := Xperia Arc S
+PRODUCT_PACKAGES += Apollo
+
+$(call inherit-product, device/semc/anzu/anzu.mk)
+$(call inherit-product-if-exists, vendor/semc/anzu/anzu-vendor.mk)
